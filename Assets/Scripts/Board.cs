@@ -12,12 +12,25 @@ public class Board : MonoBehaviour
 
     public Gem[] gems;
     public Gem[,] allGems;
+
+    public float gemSpeed;
+
+    private MatchFinder matchFind;
+
+    private void Awake(){
+          matchFind = FindObjectOfType<MatchFinder>();
+    }
     
     void Start()
     {
         allGems = new Gem[width, height];
-        Setup();
+        Setup();  
     }
+
+    private void Update(){
+        matchFind.FindAllMatches();
+    }
+
 
     private void Setup(){
         for(int x=0; x < width; x++){

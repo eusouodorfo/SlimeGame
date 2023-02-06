@@ -5,9 +5,9 @@ using UnityEngine;
 public class Gem : MonoBehaviour
 {
 
-    //[HideInInspector]
+    [HideInInspector]
     public Vector2Int posIndex;
-    //[HideInInspector]
+    [HideInInspector]
     public Board board;
 
     private Vector2 firstTouchPosition;
@@ -17,7 +17,10 @@ public class Gem : MonoBehaviour
     private float swipeAngle = 0;
     private Gem otherGem;
 
+    public enum GemType {blue, green, red, yellow, purple}
+    public GemType type;
 
+    public bool isMatched;
     
     void Start()
     {
@@ -27,6 +30,13 @@ public class Gem : MonoBehaviour
    
     void Update()
     {
+        if(Vector2.Distance(transform.position, posIndex) > .01f){
+            transform.position = Vector2.Lerp(transform.position, posIndex, board.gemSpeed * Time.deltaTime);
+        }else{
+            transform.position = new Vector3(posIndex.x, posIndex.y, 0f);
+            board.allGems[posIndex.x, posIndex.y] = this;
+        }
+        
         if(mousePressed && Input.GetMouseButtonUp(0)){
 
             mousePressed = false;
