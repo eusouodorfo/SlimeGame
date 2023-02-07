@@ -18,6 +18,9 @@ public class Board : MonoBehaviour
     [HideInInspector] 
     public MatchFinder matchFind;
 
+    public enum BoardState {wait, move}
+    public BoardState currentState = BoardState.move;
+
     private void Awake(){
           matchFind = FindObjectOfType<MatchFinder>();
     }
@@ -29,7 +32,7 @@ public class Board : MonoBehaviour
     }
 
     private void Update(){
-        matchFind.FindAllMatches();
+        //matchFind.FindAllMatches();
     }
 
 
@@ -56,7 +59,7 @@ public class Board : MonoBehaviour
     }
 
     private void SpawnGem(Vector2Int pos, Gem gemToSpawn){
-        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y, 0f), Quaternion.identity);
+        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y + height, 0f), Quaternion.identity);
         gem.transform.parent = this.transform;
         gem.name = "Gem - " + pos.x + "," + pos.y; 
         allGems[pos.x, pos.y] = gem;
@@ -104,7 +107,7 @@ public class Board : MonoBehaviour
 
         int nullCounter = 0;
 
-        for(int x =0; x < width; x++){
+        for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
                 if(allGems[x,y] == null){
                     nullCounter++;
@@ -116,6 +119,55 @@ public class Board : MonoBehaviour
             }
 
             nullCounter = 0;
+        }
+
+        StartCoroutine(FillBoardCo());
+    }
+
+    private IEnumerator FillBoardCo(){
+        yield return new WaitForSeconds(.5f);
+        RefillBoard();
+        
+        yield return new WaitForSeconds(.5f);
+
+        matchFind.FindAllMatches();
+
+        if(matchFind.currentMatches.Count > 0){
+            yield return new WaitForSeconds(.5f);
+            DestroyMatches();
+        }else{
+            yield return new WaitForSeconds(.5f);
+            currentState = BoardState.move;
+        }
+    }
+
+    private void RefillBoard(){
+        for(int x = 0; x < width; x++){
+            for(int y = 0; y < height; y++){
+                if(allGems[x, y] == null){
+                int gemToUse = Random.Range(0, gems.Length);
+                SpawnGem(new Vector2Int(x, y), gems[gemToUse]);
+                }
+            }
+        }
+
+        CheckMisplacedGems();
+    }
+
+    private void CheckMisplacedGems(){
+        List<Gem> foundGems = new List<Gem>();
+        foundGems.AddRange(FindObjectsOfType<Gem>());
+
+        for(int x = 0; x < width; x++){
+            for(int y = 0; y < height; y++){
+                if(foundGems.Contains(allGems[x, y])){
+                    foundGems.Remove(allGems[x, y]);
+                }
+            }
+        }
+
+        foreach(Gem g in foundGems){
+            Destroy(g.gameObject);
         }
     }
 }
