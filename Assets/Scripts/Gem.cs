@@ -17,12 +17,16 @@ public class Gem : MonoBehaviour
     private float swipeAngle = 0;
     private Gem otherGem;
 
-    public enum GemType {blue, green, red, yellow, purple}
+    public enum GemType {blue, green, red, yellow, purple, bomb}
     public GemType type;
 
     public bool isMatched;
     
     private Vector2Int previousPos;
+
+    public GameObject destroyEffect;
+
+    public int blastSize = 2;
     
     void Start()
     {
@@ -103,7 +107,7 @@ public class Gem : MonoBehaviour
         board.currentState = Board.BoardState.wait;
 
         yield return new WaitForSeconds(.5f);
-        
+
         board.matchFind.FindAllMatches();
 
         if(otherGem != null){
