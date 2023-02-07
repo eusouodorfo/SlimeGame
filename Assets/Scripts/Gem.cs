@@ -17,10 +17,16 @@ public class Gem : MonoBehaviour
     private float swipeAngle = 0;
     private Gem otherGem;
 
-    public enum GemType {blue, green, red, yellow, purple}
+    public enum GemType {blue, green, red, yellow, purple, bomb}
     public GemType type;
 
     public bool isMatched;
+    
+    private Vector2Int previousPos;
+
+    public GameObject destroyEffect;
+
+    public int blastSize = 2;
     
     void Start()
     {
@@ -40,9 +46,10 @@ public class Gem : MonoBehaviour
         if(mousePressed && Input.GetMouseButtonUp(0)){
 
             mousePressed = false;
-
+            if(board.currentState == Board.BoardState.move){
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             CalculateAngle();
+            }
         }
     }
 
@@ -52,8 +59,10 @@ public class Gem : MonoBehaviour
     }
 
     private void OnMouseDown(){
+        if(board.currentState == Board.BoardState.move){
         firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePressed = true;
+        }
     }
 
     private void CalculateAngle(){
@@ -67,6 +76,9 @@ public class Gem : MonoBehaviour
     }
 
     private void MovePieces(){
+
+        previousPos = posIndex;
+
         if(swipeAngle < 45 && swipeAngle > -45 && posIndex.x < board.width - 1){
             otherGem = board.allGems[posIndex.x + 1, posIndex.y];
             otherGem.posIndex.x--;
@@ -87,5 +99,32 @@ public class Gem : MonoBehaviour
 
         board.allGems[posIndex.x, posIndex.y] = this;
         board.allGems[otherGem.posIndex.x, otherGem.posIndex.y] = otherGem;
+
+        StartCoroutine(CheckMoveCo());
+    }
+
+    public IEnumerator CheckMoveCo(){
+        board.currentState = Board.BoardState.wait;
+
+        yield return new WaitForSeconds(.5f);
+
+        board.matchFind.FindAllMatches();
+
+        if(otherGem != null){
+            if(!isMatched && !otherGem.isMatched){
+                otherGem.posIndex = posIndex;
+                posIndex = previousPos;
+
+                board.allGems[posIndex.x, posIndex.y] = this;
+                board.allGems[otherGem.posIndex.x, otherGem.posIndex.y] = otherGem;
+
+                yield return new WaitForSeconds(.5f);
+
+                board.currentState = Board.BoardState.move;
+
+            }else{
+                board.DestroyMatches();
+            }
+        }
     }
 }

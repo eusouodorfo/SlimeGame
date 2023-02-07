@@ -9,16 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1704930186749210701, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.74871796
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704930186749210701, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.9358974
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284712, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d184668e3ca69674d8a20a99d14eb1d2, type: 3}
+      objectReference: {fileID: 21300000, guid: 7232c20d353467d45952973b293324e0, type: 3}
     - target: {fileID: 4412502533256284713, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 4977849151653866253, guid: 58a3e32bd6053674586ce439cfe8ab4d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61c1acb44b9600428a95b143296d127, type: 3}
