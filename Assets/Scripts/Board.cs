@@ -43,8 +43,10 @@ public class Board : MonoBehaviour
 
                 int gemToUse = Random.Range(0, gems.Length);
 
-                while(MatchesAt(new Vector2Int(x, y), gems[gemToUse])){
+                int interations = 0;
+                while(MatchesAt(new Vector2Int(x, y), gems[gemToUse]) && interations < 100){
                     gemToUse = Random.Range(0, gems.Length);
+                    interations++;
                 }
 
                 SpawnGem(new Vector2Int(x, y), gems[gemToUse]);
@@ -76,5 +78,44 @@ public class Board : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void DestroyMatchedGemAt(Vector2Int pos){
+        if(allGems[pos.x, pos.y] != null){
+            if(allGems[pos.x, pos.y].isMatched){
+                Destroy(allGems[pos.x, pos.y].gameObject);
+                allGems[pos.x, pos.y] = null;
+            }
+        }
+
+    }
+
+    public void DestroyMatches(){
+        for(int i = 0; i < matchFind.currentMatches.Count; i++){
+            if(matchFind.currentMatches[i] != null){
+                DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);
+            }
+        }
+          StartCoroutine(DecreaseRowCo());
+    }
+
+    private IEnumerator DecreaseRowCo(){
+        yield return new WaitForSeconds(.2f);
+
+        int nullCounter = 0;
+
+        for(int x =0; x < width; x++){
+            for(int y = 0; y < height; y++){
+                if(allGems[x,y] == null){
+                    nullCounter++;
+                }else if(nullCounter > 0){
+                    allGems[x, y].posIndex.y -= nullCounter;
+                    allGems[x, y - nullCounter] = allGems[x, y];
+                    allGems[x, y] = null;
+                }
+            }
+
+            nullCounter = 0;
+        }
     }
 }
