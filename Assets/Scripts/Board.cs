@@ -36,6 +36,9 @@ public class Board : MonoBehaviour
 
     private void Update(){
         //matchFind.FindAllMatches();
+        if(Input.GetKeyDown(KeyCode.S)){
+            ShuffleBoard();
+        }
     }
 
 
@@ -177,6 +180,39 @@ public class Board : MonoBehaviour
 
         foreach(Gem g in foundGems){
             Destroy(g.gameObject);
+        }
+    }
+
+    public void ShuffleBoard(){
+        if(currentState != BoardState.wait){
+            currentState = BoardState.wait;
+
+            List<Gem> gemsFromboard = new List<Gem>();
+
+            for(int x = 0; x < width; x++){
+                for(int y = 0; y < height; y++){
+                    gemsFromboard.Add(allGems[x,y]);
+                    allGems[x,y] = null;
+                }
+            }
+
+            for(int x = 0; x < width; x++){
+                for(int y = 0; y < height; y++){
+                   int gemToUse = Random.Range(0, gemsFromboard.Count);
+
+                    int interations = 0;
+                    while(MatchesAt(new Vector2Int(x,y), gemsFromboard[gemToUse]) && interations < 100 && gemsFromboard.Count > 1){
+                    gemToUse = Random.Range(0, gemsFromboard.Count);
+                    interations++;
+                   }
+
+                   gemsFromboard[gemToUse].SetupGem(new Vector2Int(x,y), this);
+                   allGems[x,y] = gemsFromboard[gemToUse];
+                   gemsFromboard.RemoveAt(gemToUse);
+                }
+            }
+
+            StartCoroutine(FillBoardCo());
         }
     }
 }
