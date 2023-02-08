@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
@@ -51,12 +52,24 @@ public class RoundManager : MonoBehaviour
         if(currentScore >= scoreTarget3){
             uiMan.winText.text = "Parabéns! Você alcançou 3 estrelas!";
             uiMan.winStars3.SetActive(true);
+
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star1", 1);
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star2", 1);
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star3", 1);
+
         }else if(currentScore >= scoreTarget2){
             uiMan.winText.text = "Parabéns! Você alcançou 2 estrelas!";
             uiMan.winStars2.SetActive(true);
+
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star1", 1);
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star2", 1);
+
         }else if(currentScore >= scoreTarget1){
             uiMan.winText.text = "Parabéns! Você alcançou 1 estrelas!";
             uiMan.winStars1.SetActive(true);
+
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star1", 1);
+            
         }else{
             uiMan.winText.text = "Oh não! Nenhuma estrela! Tente novamente!";
         }
