@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,16 @@ public class UIManager : MonoBehaviour
 
     public GameObject roundOverScreen;
 
+    private Board theBoard;
+
+    public string LevelSelect;
+
+    public GameObject pauseScreen;
+
+    private void Awake(){
+        theBoard = FindObjectOfType<Board>();
+    }
+
     void Start()
     {
         winStars1.SetActive(false);
@@ -23,6 +34,37 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            PauseUnpause();
+        }
     }
+
+    public void PauseUnpause(){
+        if(!pauseScreen.activeInHierarchy){
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }else{
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void ShuffleBoard(){
+        theBoard.ShuffleBoard();
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    public void GoToLevelSelect(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(LevelSelect);
+    }
+
+    public void TryAgain(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }
