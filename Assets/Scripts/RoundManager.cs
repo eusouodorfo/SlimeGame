@@ -73,5 +73,8 @@ public class RoundManager : MonoBehaviour
         }else{
             uiMan.winText.text = "Oh não! Nenhuma estrela! Tente novamente!";
         }
+
+        SFXManager.instance.PlayRoundOver();
+
     }
 }
