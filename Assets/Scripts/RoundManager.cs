@@ -9,6 +9,9 @@ public class RoundManager : MonoBehaviour
 
     private bool endingRound = false;
     private Board board;
+    public int currentScore;
+    public float displayScore;
+    public float scoreSpeed;
 
 
     void Awake()
@@ -32,9 +35,11 @@ public class RoundManager : MonoBehaviour
         if(endingRound && board.currentState == Board.BoardState.move){
             WinCheck();
             endingRound = false;
-
         }
         uiMan.timeText.text = roundTime.ToString("0.0") + "s";
+
+        displayScore = Mathf.Lerp(displayScore, currentScore, scoreSpeed * Time.deltaTime);
+        uiMan.scoreText.text = displayScore.ToString("0");
     }
 
     private void WinCheck(){
