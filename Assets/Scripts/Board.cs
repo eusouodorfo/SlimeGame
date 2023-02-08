@@ -30,14 +30,21 @@ public class Board : MonoBehaviour
     private float bonusMulti;
     public float bonusAmount = .5f;
 
+    private BoardLayout boardLayout;
+    private Gem[,] layoutStore;
+
     private void Awake(){
           matchFind = FindObjectOfType<MatchFinder>();
           roundMan = FindObjectOfType<RoundManager>();
+          boardLayout = GetComponent<BoardLayout>();
     }
     
     void Start()
     {
         allGems = new Gem[width, height];
+
+        layoutStore = new Gem[width, height];
+
         Setup();  
     }
 
@@ -50,12 +57,21 @@ public class Board : MonoBehaviour
 
 
     private void Setup(){
+        if(boardLayout != null){
+            layoutStore = boardLayout.GetLayout();
+        }
+
+
         for(int x=0; x < width; x++){
             for(int y=0; y < height; y++){
                 Vector2 pos = new Vector2(x, y);
                 GameObject bgTile = Instantiate(bgTilePrefab, pos, Quaternion.identity);
                 bgTile.transform.parent = transform;
                 bgTile.name = "Bg Tile - " + x + "," + y;
+
+                if(layoutStore[x,y] != null){
+                    SpawnGem(new Vector2Int(x, y), layoutStore[x, y]);
+                }else{
 
                 int gemToUse = Random.Range(0, gems.Length);
 
@@ -66,7 +82,7 @@ public class Board : MonoBehaviour
                 }
 
                 SpawnGem(new Vector2Int(x, y), gems[gemToUse]);
-
+                }
             }
         }
     }
