@@ -9,6 +9,7 @@ public class LevelSelectButton : MonoBehaviour
 
     public GameObject star1, star2, star3;
 
+
     void Start(){
         star1.SetActive(false);
         star2.SetActive(false);
@@ -25,6 +26,7 @@ public class LevelSelectButton : MonoBehaviour
         if(PlayerPrefs.HasKey(levelToLoad + "_Star3")){
             star3.SetActive(true);
         }
+
     }
 
     public void LoadLevel(){
