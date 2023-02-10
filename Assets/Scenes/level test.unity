@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43811df8f6c820746821d292bd2f5c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 60
+  roundTime: 1800
   currentScore: 0
   displayScore: 0
   scoreSpeed: 5
@@ -878,6 +878,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1781491377, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4289080543966517767, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
