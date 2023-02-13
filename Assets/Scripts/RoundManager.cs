@@ -14,6 +14,9 @@ public class RoundManager : MonoBehaviour
     public float displayScore;
     public float scoreSpeed;
 
+    public string nextLevel = "L2";
+    public int levelToUnlock = 2;
+
     public int scoreTarget1, scoreTarget2, scoreTarget3;
 
 
@@ -74,6 +77,10 @@ public class RoundManager : MonoBehaviour
             uiMan.winText.text = "Oh não! Nenhuma estrela! Tente novamente!";
         }
 
+        if(currentScore >= scoreTarget1){
+            PlayerPrefs.SetInt("levelsUnlocked", levelToUnlock);
+        }
+        
         SFXManager.instance.PlayRoundOver();
 
     }

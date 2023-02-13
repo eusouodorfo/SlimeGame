@@ -25,8 +25,8 @@ public class LevelSelectButton : MonoBehaviour
 
         if(PlayerPrefs.HasKey(levelToLoad + "_Star3")){
             star3.SetActive(true);
-        }
-
+        }       
+        
     }
 
     public void LoadLevel(){
