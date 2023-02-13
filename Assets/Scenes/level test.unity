@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: b4f992fae349c49468cd4fafe2ba40fb, type: 3}
-  m_Color: {r: 0.972549, g: 0.049617972, b: 0.031372517, a: 1}
+  m_Color: {r: 0.9215687, g: 0.3019608, b: 0.4666667, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -599,6 +599,8 @@ MonoBehaviour:
   currentScore: 0
   displayScore: 0
   scoreSpeed: 5
+  nextLevel: L2
+  levelToUnlock: 2
   scoreTarget1: 100
   scoreTarget2: 500
   scoreTarget3: 1000
