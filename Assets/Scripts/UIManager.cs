@@ -21,6 +21,10 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseScreen;
 
+    public string mainMenu = "Main Menu";
+
+    
+
     private void Awake(){
         theBoard = FindObjectOfType<Board>();
     }
@@ -66,5 +70,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void GoToMainMenu(){
+        SceneManager.LoadScene(mainMenu);
+        Time.timeScale = 1f;
+    }
 
 }
