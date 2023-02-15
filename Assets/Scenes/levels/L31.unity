@@ -1167,6 +1167,18 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 21300000, guid: ec76ba6a22e9993479241110efdcaa74, type: 3}
+    - target: {fileID: 2594362808066240441, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ca6f1a86047e204aac3f0f3c4a17bca, type: 3}
+    - target: {fileID: 2594362808066240446, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60ef947fc3a0be245878e3a3401adc0e, type: 3}
+    - target: {fileID: 2594362808066240446, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e07dcb207e51cb543a861e6ed9db4fe8, type: 3}
     - target: {fileID: 4289080543237593584, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
       propertyPath: m_fontColor.b
       value: 0.29411766
