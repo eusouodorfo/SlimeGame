@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: 60502e397934db042b529b90a966b503
   - enabled: 1
+    path: Assets/Scenes/trophylevel.unity
+    guid: 9a5afe45366f25849892807300a48c19
+  - enabled: 1
     path: Assets/Scenes/levels/L1.unity
     guid: 04ba701c200431641a33080f3ed977ac
   - enabled: 1
