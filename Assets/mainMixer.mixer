@@ -68,6 +68,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 5a7d98f756bab0d4d8ddcd4c1af8521b
   m_Children:
+  - {fileID: 7714838228943128091}
   - {fileID: 4090104832218794781}
   m_Volume: ad8946b1895d2f443be1040db755c68a
   m_Pitch: dd28f8bff965962458c3686148f29b80
@@ -113,15 +114,14 @@ AudioMixerGroupController:
   m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 120edae407b821c4295fa4784a657fa8
-  m_Children:
-  - {fileID: 7714838228943128091}
+  m_Children: []
   m_Volume: 34486875b7a4f51498abb7cec1ed3ed2
   m_Pitch: 4ec0903436937c5468195eea3b24b44a
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -7495126995649439842}
   m_UserColorIndex: 0
-  m_Mute: 0
+  m_Mute: 1
   m_Solo: 0
   m_BypassEffects: 0
 --- !u!243 &7714838228943128091

@@ -8,7 +8,7 @@ public class Sound{
     [HideInInspector] public AudioSource source;
     public string clipName;
     public AudioClip audioClip;
-    public GameObject prefabAudio;
+    public GameObject prefabAudio; 
     public bool isLoop;
     public bool playOnAwake;
 

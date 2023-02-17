@@ -54,4 +54,9 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    public void UpdateMixerVolume(){
+        musicMixerGroup.audioMixer.SetFloat("music", AudioOptionManager.musicVolume);
+        soundEffectsMixerGroup.audioMixer.SetFloat("fx", AudioOptionManager.soundEffectsVolume);
+    }
+
 }

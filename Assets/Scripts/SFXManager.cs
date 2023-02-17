@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
+    
     public static SFXManager instance;
 
     private void Awake(){
@@ -11,6 +12,7 @@ public class SFXManager : MonoBehaviour
     }
 
     public AudioSource gemSound, explodeSound, stoneSound, roundOverSound;
+    
 
     public void PlayGemBreak(){
         gemSound.Stop();
