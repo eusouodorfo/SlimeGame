@@ -3,20 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class AchievmentManager : MonoBehaviour
 {
    public GameObject achievmentPrefab;
 
    public Sprite[] sprites;
 
+   public GameObject visualAchievment;
+
+   public Dictionary<string, Achievments> achievments = new Dictionary<string, Achievments>();
+
    void Start(){
         CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+
+        /*foreach (GameObject achievmentList in GameObject.FindGameObjectsWithTag("AchievmentList")){
+            achievmentList.SetActive(false);
+        } */
+   }
+
+   public void EarnAchievment(){
+
    }
 
    public void CreateAchievment(string category, string title, string description, int  spriteIndex){
-    GameObject achievment = (GameObject) Instantiate(achievmentPrefab);
+        
+        GameObject achievment = (GameObject) Instantiate(achievmentPrefab);
 
-    SetAchievmentInfo(category, achievment, title, description, spriteIndex);
+        Achievments newAchievment = new Achievments(name, description, spriteIndex, achievment);
+
+        achievments.Add(title, newAchievment);
+
+        SetAchievmentInfo(category, achievment, title, description, spriteIndex);
 
    }
 
