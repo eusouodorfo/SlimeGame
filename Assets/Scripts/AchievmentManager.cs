@@ -34,9 +34,28 @@ public class AchievmentManager : MonoBehaviour
           //TEM QUE REMOVER DEPOIS!
            
 
-          CreateAchievment("General", "Teste W", "Descricao teste W", 0);
-          CreateAchievment("General", "Teste S", "Descricao teste W", 0);
-          CreateAchievment("General", "Teste todas teclas", "Descricao teste W", 0, new string[] {"Teste W", "Teste S"});
+          CreateAchievment("General", "1-5", "Consiga 3 estrelas: 1-5", 0);
+          CreateAchievment("General", "6-10", "Consiga 3 estrelas: 6-10", 0);
+          CreateAchievment("General", "11-15", "Consiga 3 estrelas: 11-15", 0);
+          CreateAchievment("General", "16-20", "Consiga 3 estrelas: 16-20", 0);
+          CreateAchievment("General", "21-25", "Consiga 3 estrelas: 21-25", 0);
+          CreateAchievment("General", "26-30", "Consiga 3 estrelas: 26-30", 0);
+          CreateAchievment("General", "31", "Consegiu 3 estrelas na fase 31", 0);
+          
+          CreateAchievment("General", "Estrelato", "Consiga 3 estrelas em todas as 31 fases", 0, new string[]
+          {"1-5", "6-10", "11-15", "16-20", "21-25", "26-30", "31"});
+          
+          CreateAchievment("General", "Red", "Destruiu 100 slimes vermelhos", 0);
+          CreateAchievment("General", "Yellow", "Destruiu 100 slimes amarelo", 0);
+          CreateAchievment("General", "Blue", "Destruiu 100 slimes azul", 0);
+          CreateAchievment("General", "Green", "Destruiu 100 slimes verde", 0);
+          CreateAchievment("General", "Purple", "Destruiu 100 slimes roxo", 0);
+          CreateAchievment("General", "White", "Destruiu 100 slimes branco", 0);
+          CreateAchievment("General", "Rock Baby!", "Destruiu pedras", 0);
+          CreateAchievment("General", "Bomber Man", "Explodiu 30 bombas", 0);
+          
+          CreateAchievment("General", "Platina!", "Fez todas as conquistas", 0, new string[] 
+          {"1-5", "6-10", "11-15", "16-20", "21-25", "26-30", "31", "Red", "Yellow", "Blue", "Green", "Purple", "White", "Rock Baby!", "Bomber Man"});
       
      }
 
