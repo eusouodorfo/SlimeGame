@@ -16,17 +16,22 @@ public class Achievments {
 
     public Achievments(string name, string description, int spriteIndex, GameObject achievmentRef){
 
-        this.name = name;
-        this.description = description;
-        this.unlocked = false;
-        this.spriteIndex = spriteIndex;
+        this.Name = name;
+        this.Description = description;
+        this.Unlocked = false;
+        this.SpriteIndex = spriteIndex;
         this.achievmentRef = achievmentRef;
 
     }
 
+    public string Name { get => name; set => name = value; }
+    public string Description { get => description; set => description = value; }
+    public bool Unlocked { get => unlocked; set => unlocked = value; }
+    public int SpriteIndex { get => spriteIndex; set => spriteIndex = value; }
+
     public bool EarnAchievment(){
-        if(!unlocked){
-            unlocked = true;
+        if(!Unlocked){
+            Unlocked = true;
             return true;
         }
         return false; 

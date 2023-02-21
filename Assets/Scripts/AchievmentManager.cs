@@ -6,32 +6,47 @@ using UnityEngine.UI;
 
 public class AchievmentManager : MonoBehaviour
 {
-   public GameObject achievmentPrefab;
+     public GameObject achievmentPrefab;
 
-   public Sprite[] sprites;
+     public Sprite[] sprites;
 
-   public GameObject visualAchievment;
+     public GameObject visualAchievment;
 
-   public Dictionary<string, Achievments> achievments = new Dictionary<string, Achievments>();
+     public Dictionary<string, Achievments> achievments = new Dictionary<string, Achievments>();
 
-   void Start(){
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
-        CreateAchievment("General", "Titulo Teste", "Descricao teste", 0);
+     void Start(){
+
+        CreateAchievment("General", "Teste W", "Descricao teste W", 0);
+      
 
         /*foreach (GameObject achievmentList in GameObject.FindGameObjectsWithTag("AchievmentList")){
             achievmentList.SetActive(false);
         } */
-   }
+     }
 
-   public void EarnAchievment(){
+     void Update(){
+          if(Input.GetKeyDown(KeyCode.W)){
+               EarnAchievment("Press W");
+          }
+     }
 
-   }
+     public void EarnAchievment(string title){
+          if (achievments[title].EarnAchievment()){
+            //funciona por favor!
+               SetAchievmentInfo("EarnCanvas", achievment, title);
 
-   public void CreateAchievment(string category, string title, string description, int  spriteIndex){
+               GameObject achievment = (GameObject)Instantiate(visualAchievment);
+
+               StartCoroutine(HideAchievment(achievment));
+          }
+     }
+
+     public IEnumerator HideAchievment(GameObject achievment){
+          yield return new WaitForSeconds(3);
+          Destroy(achievment);
+     }
+
+     public void CreateAchievment(string parent, string title, string description, int  spriteIndex){
         
         GameObject achievment = (GameObject) Instantiate(achievmentPrefab);
 
@@ -39,16 +54,16 @@ public class AchievmentManager : MonoBehaviour
 
         achievments.Add(title, newAchievment);
 
-        SetAchievmentInfo(category, achievment, title, description, spriteIndex);
+        SetAchievmentInfo(parent, achievment, title);
 
-   }
+     }
 
-   public void SetAchievmentInfo(string category, GameObject achievment, string title, string description, int spriteIndex){
-        achievment.transform.SetParent(GameObject.Find(category).transform);
+     public void SetAchievmentInfo(string parent, GameObject achievment, string title){
+        achievment.transform.SetParent(GameObject.Find(parent).transform);
         achievment.transform.localScale = new Vector3(1, 1, 1);
         achievment.transform.GetChild(0).GetComponent<Text>().text = title;
-        achievment.transform.GetChild(1).GetComponent<Text>().text = description;
-        achievment.transform.GetChild(2).GetComponent<Image>().sprite = sprites[spriteIndex];
+        achievment.transform.GetChild(1).GetComponent<Text>().text = achievments[title].Description;
+        achievment.transform.GetChild(2).GetComponent<Image>().sprite = sprites[achievments[title].SpriteIndex];
 
-   }
+     }
 }
