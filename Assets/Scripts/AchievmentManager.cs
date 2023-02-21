@@ -18,6 +18,8 @@ public class AchievmentManager : MonoBehaviour
 
      private static AchievmentManager instance;
 
+     private int fadeTime = 2;
+
      public static AchievmentManager Instance{
           get {          
                if (instance == null){
@@ -55,7 +57,7 @@ public class AchievmentManager : MonoBehaviour
 
                SetAchievmentInfo("EarnCanvas", achievment, title);
 
-               StartCoroutine(HideAchievment(achievment));
+               StartCoroutine(FadeAchievment(achievment));
           }
      }
 
@@ -92,5 +94,33 @@ public class AchievmentManager : MonoBehaviour
         achievment.transform.GetChild(1).GetComponent<Text>().text = achievments[title].Description;
         achievment.transform.GetChild(2).GetComponent<Image>().sprite = sprites[achievments[title].SpriteIndex];
 
+     }
+
+     private IEnumerator FadeAchievment(GameObject achievment){
+          CanvasGroup canvasGroup = achievment.GetComponent<CanvasGroup>();
+
+          float rate = 1.0f / fadeTime;
+
+          int startAlpha = 0;
+          int endAlpha = 1;
+
+          
+
+          for (int i =0; i < 2; i++){
+               
+               float progress = 0.0f;
+
+               while (progress < 1.0){
+                    canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
+                    progress += rate * Time.deltaTime;
+                    yield return null;
+               }
+               yield return new WaitForSeconds(2);
+               startAlpha = 1;
+               endAlpha = 0;
+          }
+
+          Destroy(achievment);
+          
      }
 }
