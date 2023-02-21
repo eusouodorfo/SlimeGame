@@ -33,12 +33,17 @@ public class AchievmentManager : MonoBehaviour
            
 
           CreateAchievment("General", "Teste W", "Descricao teste W", 0);
+          CreateAchievment("General", "Teste S", "Descricao teste W", 0);
+          CreateAchievment("General", "Teste todas teclas", "Descricao teste W", 0, new string[] {"Teste W", "Teste S"});
       
      }
 
      void Update(){
           if(Input.GetKeyDown(KeyCode.W)){
                EarnAchievment("Teste W");
+          }
+          if(Input.GetKeyDown(KeyCode.S)){
+               EarnAchievment("Teste S");
           }
      }
 
@@ -59,7 +64,7 @@ public class AchievmentManager : MonoBehaviour
           Destroy(achievment);
      }
 
-     public void CreateAchievment(string parent, string title, string description, int spriteIndex){
+     public void CreateAchievment(string parent, string title, string description, int spriteIndex, string[] dependencies = null){
         
         GameObject achievment = (GameObject)Instantiate(achievmentPrefab);
 
@@ -68,6 +73,14 @@ public class AchievmentManager : MonoBehaviour
         achievments.Add(title, newAchievment);
 
         SetAchievmentInfo(parent, achievment, title);
+
+          if(dependencies != null){
+               foreach (string achievmentTitle in dependencies){
+                    Achievments dependency = achievments[achievmentTitle];
+                    dependency.Child = title;
+                    newAchievment.AddDependency(dependency);
+               }
+          }
 
      }
 
