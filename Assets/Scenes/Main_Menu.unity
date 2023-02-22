@@ -10224,6 +10224,46 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717761, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818107, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818107, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56d6356c1baec3b42b7d0b96c0f39c93, type: 3}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a46a73388f82f55428b19c168b5a53b0, type: 3}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce3d83474dd5ded468b3d46c69b12bb3, type: 3}
     - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -24878,6 +24918,46 @@ PrefabInstance:
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717760, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194363686717761, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818107, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818107, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56d6356c1baec3b42b7d0b96c0f39c93, type: 3}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a46a73388f82f55428b19c168b5a53b0, type: 3}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce3d83474dd5ded468b3d46c69b12bb3, type: 3}
     - target: {fileID: 2271194365370818108, guid: 797e74ef485c5ce4089899eed30b3118, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

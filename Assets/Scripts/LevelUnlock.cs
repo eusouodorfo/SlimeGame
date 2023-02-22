@@ -8,7 +8,7 @@ using TMPro;
 public class LevelUnlock : MonoBehaviour
 {
     [SerializeField] Button[] buttons;
-    int unlockedLevelsNumber;
+    [SerializeField] public static int unlockedLevelsNumber;
     [SerializeField] TMP_Text[] numText;
 
     private void Start(){

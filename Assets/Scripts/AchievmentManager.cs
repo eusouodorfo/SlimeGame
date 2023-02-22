@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class AchievmentManager : MonoBehaviour
 {
     
-    public GameObject achievmentPrefab;
+     public GameObject achievmentPrefab;
 
      public Sprite[] sprites;
 
@@ -62,57 +63,35 @@ public class AchievmentManager : MonoBehaviour
 
      void Update(){
 
-          //debug
-          if(Input.GetKeyDown(KeyCode.W)){
-               EarnAchievment("Primeiros passos fofos");
-          }
-          if(Input.GetKeyDown(KeyCode.M)){
-               EarnAchievment("Estrelato");
-          }
-          if(Input.GetKeyDown(KeyCode.Q)){
-               EarnAchievment("Pegando o jeito");
-          }
-          if(Input.GetKeyDown(KeyCode.E)){
-               EarnAchievment("Talvez isso seja viciante");
-          }
-          if(Input.GetKeyDown(KeyCode.R)){
-               EarnAchievment("Não é uma fase mãe!");
-          }
-          if(Input.GetKeyDown(KeyCode.T)){
-               EarnAchievment("Graduado em apertar slimes");
-          }
-          if(Input.GetKeyDown(KeyCode.Y)){
-               EarnAchievment("Me chame de Dr Slime");
-          }
-          if(Input.GetKeyDown(KeyCode.U)){
-               EarnAchievment("De repente 31");
-          }
-          if(Input.GetKeyDown(KeyCode.I)){
-               EarnAchievment("Slime de Rubi");
-          }
-          if(Input.GetKeyDown(KeyCode.O)){
-               EarnAchievment("Slime de Topázio");
-          }
-          if(Input.GetKeyDown(KeyCode.P)){
-               EarnAchievment("Slime de Turquesa");
-          }
-          if(Input.GetKeyDown(KeyCode.A)){
-               EarnAchievment("Slime de Pérola");
-          }
-          if(Input.GetKeyDown(KeyCode.S)){
-               EarnAchievment("Slime de Ametista");
-          }
-          if(Input.GetKeyDown(KeyCode.D)){
-               EarnAchievment("Slime de Esmeralda");
-          }
-          if(Input.GetKeyDown(KeyCode.F)){
-               EarnAchievment("Slime mole em pedra dura...");
-          }
-          if(Input.GetKeyDown(KeyCode.G)){
-               EarnAchievment("Bomber Man");
+          //reais
+          if(LevelUnlock.unlockedLevelsNumber == 6){
+                EarnAchievment("Primeiros passos fofos");
           }
 
+          if(LevelUnlock.unlockedLevelsNumber == 11){
+                EarnAchievment("Pegando o jeito");
+          }
 
+          if(LevelUnlock.unlockedLevelsNumber == 16){
+                EarnAchievment("Talvez isso seja viciante");
+          }
+
+          if(LevelUnlock.unlockedLevelsNumber == 21){
+                EarnAchievment("Não é uma fase mãe!");
+          }
+
+          if(LevelUnlock.unlockedLevelsNumber == 26){
+                EarnAchievment("Graduado em apertar slimes");
+          }
+
+          if(LevelUnlock.unlockedLevelsNumber == 31){
+                EarnAchievment("Me chame de Dr Slime");
+          }
+
+           if(LevelUnlock.unlockedLevelsNumber == 32){
+                EarnAchievment("De repente 31");
+          }
+          
          
      }
 
@@ -128,10 +107,10 @@ public class AchievmentManager : MonoBehaviour
           }
      }
 
-     public IEnumerator HideAchievment(GameObject achievment){
+     /*public IEnumerator HideAchievment(GameObject achievment){
           yield return new WaitForSeconds(3);
           Destroy(achievment);
-     }
+     }*/
 
      public void CreateAchievment(string parent, string title, string description, int spriteIndex, string[] dependencies = null){
         
