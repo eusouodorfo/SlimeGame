@@ -34,28 +34,32 @@ public class AchievmentManager : MonoBehaviour
           //TEM QUE REMOVER DEPOIS!
            
 
-          CreateAchievment("General", "1-5", "Consiga 3 estrelas: 1-5", 0);
-          CreateAchievment("General", "6-10", "Consiga 3 estrelas: 6-10", 0);
-          CreateAchievment("General", "11-15", "Consiga 3 estrelas: 11-15", 0);
-          CreateAchievment("General", "16-20", "Consiga 3 estrelas: 16-20", 0);
-          CreateAchievment("General", "21-25", "Consiga 3 estrelas: 21-25", 0);
-          CreateAchievment("General", "26-30", "Consiga 3 estrelas: 26-30", 0);
-          CreateAchievment("General", "31", "Consegiu 3 estrelas na fase 31", 0);
+          CreateAchievment("General", "Primeiros passos fofos", "Consiga 3 estrelas: 1-5", 10);
+          CreateAchievment("General", "Pegando o jeito", "Consiga 3 estrelas: 6-10", 14);
+          CreateAchievment("General", "Talvez isso seja viciante", "Consiga 3 estrelas: 11-15", 13);
+          CreateAchievment("General", "Não é uma fase mãe!", "Consiga 3 estrelas: 16-20", 15);
+          CreateAchievment("General", "Graduado em apertar slimes", "Consiga 3 estrelas: 21-25", 12);
+          CreateAchievment("General", "Me chame de Dr Slime", "Consiga 3 estrelas: 26-30", 11);
+          CreateAchievment("General", "De repente 31", "Consegiu 3 estrelas na fase 31", 0);
           
-          CreateAchievment("General", "Estrelato", "Consiga 3 estrelas em todas as 31 fases", 0, new string[]
-          {"1-5", "6-10", "11-15", "16-20", "21-25", "26-30", "31"});
+          CreateAchievment("General", "Estrelato", "Consiga 3 estrelas em todas as 31 fases", 16, new string[]
+          {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
+          "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31"});
           
-          CreateAchievment("General", "Red", "Destruiu 100 slimes vermelhos", 0);
-          CreateAchievment("General", "Yellow", "Destruiu 100 slimes amarelo", 0);
-          CreateAchievment("General", "Blue", "Destruiu 100 slimes azul", 0);
-          CreateAchievment("General", "Green", "Destruiu 100 slimes verde", 0);
-          CreateAchievment("General", "Purple", "Destruiu 100 slimes roxo", 0);
-          CreateAchievment("General", "White", "Destruiu 100 slimes branco", 0);
-          CreateAchievment("General", "Rock Baby!", "Destruiu pedras", 0);
-          CreateAchievment("General", "Bomber Man", "Explodiu 30 bombas", 0);
+          CreateAchievment("General", "Slime de Rubi", "Destruiu 100 slimes vermelhos", 6);
+          CreateAchievment("General", "Slime de Topázio", "Destruiu 100 slimes amarelo", 1);
+          CreateAchievment("General", "Slime de Turquesa", "Destruiu 100 slimes azul", 3);
+          CreateAchievment("General", "Slime de Pérola", "Destruiu 100 slimes branco", 2);
+          CreateAchievment("General", "Slime de Ametista", "Destruiu 100 slimes roxo", 5);
+          CreateAchievment("General", "Slime de Esmeralda", "Destruiu 100 slimes verde", 4);
+          CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu pedras", 8);
+          CreateAchievment("General", "Bomber Man", "Explodiu 30 bombas", 7);
           
-          CreateAchievment("General", "Platina!", "Fez todas as conquistas", 0, new string[] 
-          {"1-5", "6-10", "11-15", "16-20", "21-25", "26-30", "31", "Red", "Yellow", "Blue", "Green", "Purple", "White", "Rock Baby!", "Bomber Man"});
+          CreateAchievment("General", "Slime de Platina", "Fez todas as conquistas", 9, new string[] 
+          {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
+          "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31", "Slime de Rubi",
+          "Slime de Topázio", "Slime de Turquesa", "Slime de Pérola", "Slime de Ametista", "Slime de Esmeralda",
+          "Slime mole em pedra dura...", "Bomber Man"});
       
      }
 

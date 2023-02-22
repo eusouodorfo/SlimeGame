@@ -9,16 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1704930186749210701, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.9102564
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704930186749210701, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.92820513
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284712, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c3d70ddde63f0d0478d00a378987eed2, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e318604137d9ac49b6d6b9bec5a6480, type: 3}
     - target: {fileID: 4412502533256284713, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284714, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: m_Name
-      value: Gem - Stone
+      value: Gem - Stone Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: type
