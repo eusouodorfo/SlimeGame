@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class AchievmentManager : MonoBehaviour
 {
-     public GameObject achievmentPrefab;
+    
+    public GameObject achievmentPrefab;
 
      public Sprite[] sprites;
 
@@ -31,9 +32,6 @@ public class AchievmentManager : MonoBehaviour
 
      void Start(){
 
-          //TEM QUE REMOVER DEPOIS!
-           
-
           CreateAchievment("General", "Primeiros passos fofos", "Consiga 3 estrelas: 1-5", 10);
           CreateAchievment("General", "Pegando o jeito", "Consiga 3 estrelas: 6-10", 14);
           CreateAchievment("General", "Talvez isso seja viciante", "Consiga 3 estrelas: 11-15", 13);
@@ -41,11 +39,11 @@ public class AchievmentManager : MonoBehaviour
           CreateAchievment("General", "Graduado em apertar slimes", "Consiga 3 estrelas: 21-25", 12);
           CreateAchievment("General", "Me chame de Dr Slime", "Consiga 3 estrelas: 26-30", 11);
           CreateAchievment("General", "De repente 31", "Consegiu 3 estrelas na fase 31", 0);
-          
-          CreateAchievment("General", "Estrelato", "Consiga 3 estrelas em todas as 31 fases", 16, new string[]
+           
+          CreateAchievment("General", "Estrelato", "3 estrelas em todas as fases", 16, new string[] 
           {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
           "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31"});
-          
+
           CreateAchievment("General", "Slime de Rubi", "Destruiu 100 slimes vermelhos", 6);
           CreateAchievment("General", "Slime de Topázio", "Destruiu 100 slimes amarelo", 1);
           CreateAchievment("General", "Slime de Turquesa", "Destruiu 100 slimes azul", 3);
@@ -54,27 +52,73 @@ public class AchievmentManager : MonoBehaviour
           CreateAchievment("General", "Slime de Esmeralda", "Destruiu 100 slimes verde", 4);
           CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu pedras", 8);
           CreateAchievment("General", "Bomber Man", "Explodiu 30 bombas", 7);
-          
-          CreateAchievment("General", "Slime de Platina", "Fez todas as conquistas", 9, new string[] 
-          {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
-          "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31", "Slime de Rubi",
+
+          CreateAchievment("General", "Platina", "Platina", 9, new string[]{"Estrelato", "Slime de Rubi",
           "Slime de Topázio", "Slime de Turquesa", "Slime de Pérola", "Slime de Ametista", "Slime de Esmeralda",
           "Slime mole em pedra dura...", "Bomber Man"});
+      
       
      }
 
      void Update(){
+
+          //debug
           if(Input.GetKeyDown(KeyCode.W)){
-               EarnAchievment("Teste W");
+               EarnAchievment("Primeiros passos fofos");
+          }
+          if(Input.GetKeyDown(KeyCode.M)){
+               EarnAchievment("Estrelato");
+          }
+          if(Input.GetKeyDown(KeyCode.Q)){
+               EarnAchievment("Pegando o jeito");
+          }
+          if(Input.GetKeyDown(KeyCode.E)){
+               EarnAchievment("Talvez isso seja viciante");
+          }
+          if(Input.GetKeyDown(KeyCode.R)){
+               EarnAchievment("Não é uma fase mãe!");
+          }
+          if(Input.GetKeyDown(KeyCode.T)){
+               EarnAchievment("Graduado em apertar slimes");
+          }
+          if(Input.GetKeyDown(KeyCode.Y)){
+               EarnAchievment("Me chame de Dr Slime");
+          }
+          if(Input.GetKeyDown(KeyCode.U)){
+               EarnAchievment("De repente 31");
+          }
+          if(Input.GetKeyDown(KeyCode.I)){
+               EarnAchievment("Slime de Rubi");
+          }
+          if(Input.GetKeyDown(KeyCode.O)){
+               EarnAchievment("Slime de Topázio");
+          }
+          if(Input.GetKeyDown(KeyCode.P)){
+               EarnAchievment("Slime de Turquesa");
+          }
+          if(Input.GetKeyDown(KeyCode.A)){
+               EarnAchievment("Slime de Pérola");
           }
           if(Input.GetKeyDown(KeyCode.S)){
-               EarnAchievment("Teste S");
+               EarnAchievment("Slime de Ametista");
           }
+          if(Input.GetKeyDown(KeyCode.D)){
+               EarnAchievment("Slime de Esmeralda");
+          }
+          if(Input.GetKeyDown(KeyCode.F)){
+               EarnAchievment("Slime mole em pedra dura...");
+          }
+          if(Input.GetKeyDown(KeyCode.G)){
+               EarnAchievment("Bomber Man");
+          }
+
+
+         
      }
 
      public void EarnAchievment(string title){
           if (achievments[title].EarnAchievment()){
-            //funciona por favor!
+               //funciona por favor! Pelo amor de Deus
             
                GameObject achievment = (GameObject)Instantiate(visualAchievment);
 
@@ -93,7 +137,7 @@ public class AchievmentManager : MonoBehaviour
         
         GameObject achievment = (GameObject)Instantiate(achievmentPrefab);
 
-        Achievments newAchievment = new Achievments(name, description, spriteIndex, achievment);
+        Achievments newAchievment = new Achievments(title, description, spriteIndex, achievment);
 
         achievments.Add(title, newAchievment);
 

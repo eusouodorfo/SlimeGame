@@ -12,6 +12,7 @@ public class Achievments {
         set { name = value;}
     }
 
+
     private string description;
 
     public string Description{
@@ -34,7 +35,15 @@ public class Achievments {
     }
 
     private GameObject achievmentRef;
+
     private List<Achievments> dependencies = new List<Achievments>();
+
+    private string child;
+
+    public string Child{
+        get { return child;}
+        set { child = value;}
+    }
 
 
     public Achievments(string name, string description, int spriteIndex, GameObject achievmentRef){
@@ -44,6 +53,7 @@ public class Achievments {
         this.Unlocked = false;
         this.SpriteIndex = spriteIndex;
         this.achievmentRef = achievmentRef;
+
         LoadAchievment();
 
     }
@@ -52,15 +62,9 @@ public class Achievments {
         dependencies.Add(dependency);
     }
 
-    private string child;
-
-    public string Child{
-        get { return child;}
-        set { child = value;}
-    }
 
     public bool EarnAchievment(){
-        if(!Unlocked && !dependencies.Exists(x => x.unlocked == false)){
+        if(!unlocked && !dependencies.Exists(x => x.unlocked == false)){
             achievmentRef.GetComponent<Image>().sprite = AchievmentManager.Instance.unlockedSprite;
             SaveAchievment(true);
 
@@ -87,7 +91,7 @@ public class Achievments {
         
     }
 
-    /* void Start(){
+     /*void Start(){
         Achievments myAchievment = new Achievments();
     } */
 }
