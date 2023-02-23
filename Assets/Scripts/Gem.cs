@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,11 @@ public class Gem : MonoBehaviour
 
     public enum GemType {blue, green, red, yellow, purple, bomb, stone, white}
     public GemType type;
+
+
+    //teste pra capturar a tag
+    public enum GemTag {blue, green, red, yellow, purple, bomb, stone, white}
+    public GemTag componentTag;
 
     public bool isMatched;
     
@@ -128,5 +134,20 @@ public class Gem : MonoBehaviour
                 board.DestroyMatches();
             }
         }
+    }
+
+
+    //teste para capturar a tag
+
+    public override bool Equals(object obj)
+    {
+        return obj is Gem gem &&
+               base.Equals(obj) &&
+               tag == gem.tag;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(base.GetHashCode(), tag);
     }
 }

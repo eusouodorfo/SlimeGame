@@ -63,7 +63,7 @@ public class AchievmentManager : MonoBehaviour
 
      void Update(){
 
-          //reais
+          //conquistas sobre alcancar fases
           if(LevelUnlock.unlockedLevelsNumber == 5){
                 EarnAchievment("Primeiros passos fofos");
           }
@@ -96,12 +96,33 @@ public class AchievmentManager : MonoBehaviour
                 EarnAchievment("Estrelato");
           }
 
+          //conquistas sobre pedras e bombas destruidas
           if(SFXManager.bombCount >= 50){
                 EarnAchievment("Bomber Man");
           }
 
           if(SFXManager.stoneCount >= 50){
                 EarnAchievment("Slime mole em pedra dura...");
+          }
+
+          //conquistas sobre slimes destruidos
+          if(Board.tagBlue >= 10){
+               EarnAchievment("Slime de Turquesa");
+          }
+          if(Board.tagRed >= 10){
+               EarnAchievment("Slime de Rubi");
+          }
+          if(Board.tagYellow >= 10){
+               EarnAchievment("Slime de Topázio");
+          }
+          if(Board.tagWhite >= 10){
+               EarnAchievment("Slime de Pérola");
+          }
+          if(Board.tagPurple >= 10){
+               EarnAchievment("Slime de Ametista");
+          }
+          if(Board.tagGreen >= 10){
+               EarnAchievment("Slime de Esmeralda");
           }
           
          

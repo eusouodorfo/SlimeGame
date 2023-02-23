@@ -13,6 +13,9 @@ public class Board : MonoBehaviour
     public Gem[] gems;
     public Gem[,] allGems;
 
+    //teste para capturar tag
+    public Gem[,] allGemsTags;
+
     public float gemSpeed;
 
     [HideInInspector] 
@@ -20,6 +23,11 @@ public class Board : MonoBehaviour
 
     public enum BoardState {wait, move}
     public BoardState currentState = BoardState.move;
+
+    //teste add de tag
+    public static int tagBlue, tagRed, tagYellow, tagWhite, tagPurple, tagGreen;
+
+
 
     public Gem bomb;
     public float bombChance = 2f;
@@ -127,7 +135,43 @@ public class Board : MonoBehaviour
                     SFXManager.instance.PlayGemBreak();
                 }
 
+                //teste de pegar a tag
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("blue")){
+                    tagBlue++;
+                }
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("red")){
+                    tagRed++;
+                }
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("white")){
+                    tagWhite++;
+                }
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("green")){
+                    tagGreen++;
+                }
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("purple")){
+                    tagPurple++;
+                }
+                Debug.Log(allGems[pos.x, pos.y].tag);
+                if(allGems[pos.x, pos.y].CompareTag("yellow")){
+                    tagYellow++;
+                }
+                
+                Debug.Log("Foram destruidos slimes azuis: " + tagBlue);
+                Debug.Log("Foram destruidos slimes vermelho: " + tagRed);
+                Debug.Log("Foram destruidos slimes amarelo: " + tagYellow);
+                Debug.Log("Foram destruidos slimes roxo: " + tagPurple);
+                Debug.Log("Foram destruidos slimes verde: " + tagGreen);
+                Debug.Log("Foram destruidos slimes white: " + tagWhite);
+
+                //codigo normal
+
                 Instantiate(allGems[pos.x, pos.y].destroyEffect, new Vector2(pos.x, pos.y), Quaternion.identity);
+
 
                 Destroy(allGems[pos.x, pos.y].gameObject);
                 allGems[pos.x, pos.y] = null;

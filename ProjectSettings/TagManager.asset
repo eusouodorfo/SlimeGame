@@ -6,6 +6,13 @@ TagManager:
   tags:
   - AchievmentList
   - blue
+  - white
+  - red
+  - yellow
+  - green
+  - purple
+  - bomb
+  - stone
   layers:
   - Default
   - TransparentFX

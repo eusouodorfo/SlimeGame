@@ -67,8 +67,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4412502533256284714, guid: c61c1acb44b9600428a95b143296d127, type: 3}
+      propertyPath: m_TagString
+      value: bomb
+      objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
+      propertyPath: componentTag
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
