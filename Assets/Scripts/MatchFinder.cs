@@ -45,7 +45,6 @@ public class MatchFinder : MonoBehaviour
                                 currentGem.isMatched = true;
                                 aboveGem.isMatched = true;
                                 belowGem.isMatched = true;
-
                                 currentMatches.Add(currentGem);
                                 currentMatches.Add(aboveGem);
                                 currentMatches.Add(belowGem);

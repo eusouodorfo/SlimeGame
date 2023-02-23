@@ -61,16 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: type
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4412502533256284715, guid: c61c1acb44b9600428a95b143296d127, type: 3}
       propertyPath: destroyEffect
       value: 
-      objectReference: {fileID: 5171680698651691836}
+      objectReference: {fileID: 3605787581167403510, guid: 223d96e3d15e32d4ead504f41078f391, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61c1acb44b9600428a95b143296d127, type: 3}
---- !u!1 &5171680698651691836 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4412502533256284714, guid: c61c1acb44b9600428a95b143296d127, type: 3}
-  m_PrefabInstance: {fileID: 8861355209849323798}
-  m_PrefabAsset: {fileID: 0}

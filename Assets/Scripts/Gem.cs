@@ -17,7 +17,7 @@ public class Gem : MonoBehaviour
     private float swipeAngle = 0;
     private Gem otherGem;
 
-    public enum GemType {blue, green, red, yellow, purple, bomb, stone}
+    public enum GemType {blue, green, red, yellow, purple, bomb, stone, white}
     public GemType type;
 
     public bool isMatched;
@@ -70,7 +70,7 @@ public class Gem : MonoBehaviour
     private void CalculateAngle(){
         swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x);
         swipeAngle = swipeAngle * 180 / Mathf.PI;
-        Debug.Log(swipeAngle);
+        //Debug.Log(swipeAngle);
         if(Vector3.Distance(firstTouchPosition, finalTouchPosition) > .5f){
             MovePieces();
         }
