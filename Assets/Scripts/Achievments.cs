@@ -45,14 +45,18 @@ public class Achievments {
         set { child = value;}
     }
 
+    private int currentProgression;
+    private int maxProgression;
 
-    public Achievments(string name, string description, int spriteIndex, GameObject achievmentRef){
+
+    public Achievments(string name, string description, int spriteIndex, GameObject achievmentRef, int maxProgression){
 
         this.Name = name;
         this.Description = description;
         this.Unlocked = false;
         this.SpriteIndex = spriteIndex;
         this.achievmentRef = achievmentRef;
+        this.maxProgression = maxProgression;
 
         LoadAchievment();
 
@@ -64,7 +68,7 @@ public class Achievments {
 
 
     public bool EarnAchievment(){
-        if(!unlocked && !dependencies.Exists(x => x.unlocked == false)){
+        if(!unlocked && !dependencies.Exists(x => x.unlocked == false) && CheckProgress()){
             achievmentRef.GetComponent<Image>().sprite = AchievmentManager.Instance.unlockedSprite;
             SaveAchievment(true);
 
@@ -79,6 +83,7 @@ public class Achievments {
 
     public void SaveAchievment(bool value){
         unlocked = value;
+        PlayerPrefs.SetInt("Progression" + Name, currentProgression);
         PlayerPrefs.SetInt(name, value ? 1 : 0);
         PlayerPrefs.Save();
     }
@@ -86,12 +91,29 @@ public class Achievments {
     public void LoadAchievment(){
         unlocked = PlayerPrefs.GetInt(name) == 1 ? true : false;
         if(unlocked){
+            currentProgression = PlayerPrefs.GetInt("Progression" + Name);
             achievmentRef.GetComponent<Image>().sprite = AchievmentManager.Instance.unlockedSprite;
         }
         
     }
 
-     /*void Start(){
-        Achievments myAchievment = new Achievments();
-    } */
+    public bool CheckProgress(){
+
+        currentProgression++;
+
+        achievmentRef.transform.GetChild(0).GetComponent<Text>().text = Name + " " + currentProgression + "/" + maxProgression;
+
+        SaveAchievment(false);
+
+        if(maxProgression == 0){
+            return true;
+        }
+        if(currentProgression >= maxProgression){
+            return true;
+        }
+
+        return false;
+    }
+    
+     
 }

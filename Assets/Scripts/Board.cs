@@ -15,6 +15,7 @@ public class Board : MonoBehaviour
 
     //teste para capturar tag
     public Gem[,] allGemsTags;
+    public static bool achtagBlue = false;
 
     public float gemSpeed;
 
@@ -26,6 +27,7 @@ public class Board : MonoBehaviour
 
     //teste add de tag
     public static int tagBlue, tagRed, tagYellow, tagWhite, tagPurple, tagGreen;
+    public static int tagBluePre, tagRedPre, tagYellowPre, tagWhitePre, tagPurplePre, tagGreenPre;
 
 
 
@@ -138,7 +140,7 @@ public class Board : MonoBehaviour
                 //teste de pegar a tag
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("blue")){
-                    tagBlue++;
+                    tagBlue++;   
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("red")){
@@ -175,6 +177,8 @@ public class Board : MonoBehaviour
 
                 Destroy(allGems[pos.x, pos.y].gameObject);
                 allGems[pos.x, pos.y] = null;
+
+                tagBlue = 0;
             }
         }
 
@@ -304,4 +308,6 @@ public class Board : MonoBehaviour
             roundMan.currentScore += Mathf.RoundToInt(bonusToAdd);
         }
     }
+
+    
 }

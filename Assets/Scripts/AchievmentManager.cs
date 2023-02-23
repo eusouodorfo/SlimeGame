@@ -33,28 +33,28 @@ public class AchievmentManager : MonoBehaviour
 
      void Start(){
 
-          CreateAchievment("General", "Primeiros passos fofos", "Liberou a fase 5", 10);
-          CreateAchievment("General", "Pegando o jeito", "Liberou a fase 10", 14);
-          CreateAchievment("General", "Talvez isso seja viciante", "Liberou a fase 15", 13);
-          CreateAchievment("General", "Não é uma fase mãe!", "Liberou a fase 20", 15);
-          CreateAchievment("General", "Graduado em apertar slimes", "Liberou a fase 25", 12);
-          CreateAchievment("General", "Me chame de Dr Slime", "Liberou a fase 30", 11);
-          CreateAchievment("General", "De repente 31", "Liberou a fase 31", 0);
+          CreateAchievment("General", "Primeiros passos fofos", "Liberou a fase 5", 10, 0);
+          CreateAchievment("General", "Pegando o jeito", "Liberou a fase 10", 14, 0);
+          CreateAchievment("General", "Talvez isso seja viciante", "Liberou a fase 15", 13, 0);
+          CreateAchievment("General", "Não é uma fase mãe!", "Liberou a fase 20", 15, 0);
+          CreateAchievment("General", "Graduado em apertar slimes", "Liberou a fase 25", 12, 0);
+          CreateAchievment("General", "Me chame de Dr Slime", "Liberou a fase 30", 11, 0);
+          CreateAchievment("General", "De repente 31", "Liberou a fase 31", 0, 0);
            
-          CreateAchievment("General", "Estrelato", "Liberou todas as fases", 16, new string[] 
+          CreateAchievment("General", "Estrelato", "Liberou todas as fases", 16, 0, new string[] 
           {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
           "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31"});
 
-          CreateAchievment("General", "Slime de Rubi", "Destruiu 100 slimes vermelhos", 6);
-          CreateAchievment("General", "Slime de Topázio", "Destruiu 100 slimes amarelo", 1);
-          CreateAchievment("General", "Slime de Turquesa", "Destruiu 100 slimes azul", 3);
-          CreateAchievment("General", "Slime de Pérola", "Destruiu 100 slimes branco", 2);
-          CreateAchievment("General", "Slime de Ametista", "Destruiu 100 slimes roxo", 5);
-          CreateAchievment("General", "Slime de Esmeralda", "Destruiu 100 slimes verde", 4);
-          CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu 50 pedras", 8);
-          CreateAchievment("General", "Bomber Man", "Explodiu 50 bombas", 7);
+          CreateAchievment("General", "Slime de Rubi", "Destruiu 100 slimes vermelhos", 6, 100);
+          CreateAchievment("General", "Slime de Topázio", "Destruiu 100 slimes amarelo", 1, 100);
+          CreateAchievment("General", "Slime de Turquesa", "Destruiu 100 slimes azul", 3, 100);
+          CreateAchievment("General", "Slime de Pérola", "Destruiu 100 slimes branco", 2, 100);
+          CreateAchievment("General", "Slime de Ametista", "Destruiu 100 slimes roxo", 5, 100);
+          CreateAchievment("General", "Slime de Esmeralda", "Destruiu 100 slimes verde", 4, 100);
+          CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu 50 pedras", 8, 50);
+          CreateAchievment("General", "Bomber Man", "Explodiu 50 bombas", 7, 50);
 
-          CreateAchievment("General", "Platina", "Platina", 9, new string[]{"Estrelato", "Slime de Rubi",
+          CreateAchievment("General", "Platina", "Platina", 9, 0, new string[]{"Estrelato", "Slime de Rubi",
           "Slime de Topázio", "Slime de Turquesa", "Slime de Pérola", "Slime de Ametista", "Slime de Esmeralda",
           "Slime mole em pedra dura...", "Bomber Man"});
       
@@ -106,22 +106,22 @@ public class AchievmentManager : MonoBehaviour
           }
 
           //conquistas sobre slimes destruidos
-          if(Board.tagBlue >= 10){
+          if(Board.tagBlue >= 100){
                EarnAchievment("Slime de Turquesa");
           }
-          if(Board.tagRed >= 10){
+          if(Board.tagRed >= 100){
                EarnAchievment("Slime de Rubi");
           }
-          if(Board.tagYellow >= 10){
+          if(Board.tagYellow >= 100){
                EarnAchievment("Slime de Topázio");
           }
-          if(Board.tagWhite >= 10){
+          if(Board.tagWhite >= 100){
                EarnAchievment("Slime de Pérola");
           }
-          if(Board.tagPurple >= 10){
+          if(Board.tagPurple >= 100){
                EarnAchievment("Slime de Ametista");
           }
-          if(Board.tagGreen >= 10){
+          if(Board.tagGreen >= 100){
                EarnAchievment("Slime de Esmeralda");
           }
           
@@ -145,15 +145,15 @@ public class AchievmentManager : MonoBehaviour
           Destroy(achievment);
      }*/
 
-     public void CreateAchievment(string parent, string title, string description, int spriteIndex, string[] dependencies = null){
+     public void CreateAchievment(string parent, string title, string description, int spriteIndex, int progress, string[] dependencies = null){
         
         GameObject achievment = (GameObject)Instantiate(achievmentPrefab);
 
-        Achievments newAchievment = new Achievments(title, description, spriteIndex, achievment);
+        Achievments newAchievment = new Achievments(title, description, spriteIndex, achievment, progress);
 
         achievments.Add(title, newAchievment);
 
-        SetAchievmentInfo(parent, achievment, title);
+        SetAchievmentInfo(parent, achievment, title, progress);
 
           if(dependencies != null){
                foreach (string achievmentTitle in dependencies){
@@ -165,13 +165,16 @@ public class AchievmentManager : MonoBehaviour
 
      }
 
-     public void SetAchievmentInfo(string parent, GameObject achievment, string title){
+     public void SetAchievmentInfo(string parent, GameObject achievment, string title, int progression = 0){
 
-        achievment.transform.SetParent(GameObject.Find(parent).transform);
-        achievment.transform.localScale = new Vector3(1, 1, 1);
-        achievment.transform.GetChild(0).GetComponent<Text>().text = title;
-        achievment.transform.GetChild(1).GetComponent<Text>().text = achievments[title].Description;
-        achievment.transform.GetChild(2).GetComponent<Image>().sprite = sprites[achievments[title].SpriteIndex];
+          achievment.transform.SetParent(GameObject.Find(parent).transform);
+          achievment.transform.localScale = new Vector3(1, 1, 1);
+
+          string progress = progression > 0 ? " " + PlayerPrefs.GetInt("Progression" + title) + "/" +progression.ToString() : string.Empty;
+
+          achievment.transform.GetChild(0).GetComponent<Text>().text = title + progress;
+          achievment.transform.GetChild(1).GetComponent<Text>().text = achievments[title].Description;
+          achievment.transform.GetChild(2).GetComponent<Image>().sprite = sprites[achievments[title].SpriteIndex];
 
      }
 
