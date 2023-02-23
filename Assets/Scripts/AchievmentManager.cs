@@ -51,8 +51,8 @@ public class AchievmentManager : MonoBehaviour
           CreateAchievment("General", "Slime de Pérola", "Destruiu 100 slimes branco", 2);
           CreateAchievment("General", "Slime de Ametista", "Destruiu 100 slimes roxo", 5);
           CreateAchievment("General", "Slime de Esmeralda", "Destruiu 100 slimes verde", 4);
-          CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu pedras", 8);
-          CreateAchievment("General", "Bomber Man", "Explodiu 30 bombas", 7);
+          CreateAchievment("General", "Slime mole em pedra dura...", "Destruiu 50 pedras", 8);
+          CreateAchievment("General", "Bomber Man", "Explodiu 50 bombas", 7);
 
           CreateAchievment("General", "Platina", "Platina", 9, new string[]{"Estrelato", "Slime de Rubi",
           "Slime de Topázio", "Slime de Turquesa", "Slime de Pérola", "Slime de Ametista", "Slime de Esmeralda",
@@ -94,6 +94,14 @@ public class AchievmentManager : MonoBehaviour
 
           if(LevelUnlock.unlockedLevelsNumber == 31){
                 EarnAchievment("Estrelato");
+          }
+
+          if(SFXManager.bombCount >= 50){
+                EarnAchievment("Bomber Man");
+          }
+
+          if(SFXManager.stoneCount >= 50){
+                EarnAchievment("Slime mole em pedra dura...");
           }
           
          

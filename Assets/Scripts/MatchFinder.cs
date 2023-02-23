@@ -7,6 +7,7 @@ public class MatchFinder : MonoBehaviour
 {
     private Board board;
     public List<Gem> currentMatches = new List<Gem>();
+    
 
     private void Awake(){
         board = FindObjectOfType<Board>();

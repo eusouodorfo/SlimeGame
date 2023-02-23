@@ -529,7 +529,7 @@ MonoBehaviour:
   displayScore: 0
   scoreSpeed: 5
   nextLevel: L31
-  levelToUnlock: 31
+  levelToUnlock: 32
   scoreTarget1: 100
   scoreTarget2: 500
   scoreTarget3: 1000
@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 3c522dfe25a7896468abb57f4bf0f186, type: 3}
+    - target: {fileID: 4738703011584271633, guid: 07e727183f45baa43af5c8d736dcbac0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4738703011584271634, guid: 07e727183f45baa43af5c8d736dcbac0, type: 3}
       propertyPath: m_Camera
       value: 

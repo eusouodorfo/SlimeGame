@@ -7,6 +7,9 @@ public class SFXManager : MonoBehaviour
     
     public static SFXManager instance;
 
+    [SerializeField] public static int bombCount;
+    [SerializeField] public static int stoneCount;
+
     private void Awake(){
         instance = this;
     }
@@ -26,6 +29,9 @@ public class SFXManager : MonoBehaviour
         explodeSound.Stop();
 
         explodeSound.pitch = Random.Range(.8f, 1.2f);
+
+        bombCount++;
+        Debug.Log("Bombas explodidas " + bombCount);
         
         explodeSound.Play();
     }
@@ -34,6 +40,9 @@ public class SFXManager : MonoBehaviour
         stoneSound.Stop();
 
         stoneSound.pitch = Random.Range(.8f, 1.2f);
+
+        stoneCount++;
+        Debug.Log("Pedras explodidas " + stoneCount);
         
         stoneSound.Play();
     }
