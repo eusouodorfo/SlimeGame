@@ -33,15 +33,15 @@ public class AchievmentManager : MonoBehaviour
 
      void Start(){
 
-          CreateAchievment("General", "Primeiros passos fofos", "Consiga 3 estrelas: 1-5", 10);
-          CreateAchievment("General", "Pegando o jeito", "Consiga 3 estrelas: 6-10", 14);
-          CreateAchievment("General", "Talvez isso seja viciante", "Consiga 3 estrelas: 11-15", 13);
-          CreateAchievment("General", "Não é uma fase mãe!", "Consiga 3 estrelas: 16-20", 15);
-          CreateAchievment("General", "Graduado em apertar slimes", "Consiga 3 estrelas: 21-25", 12);
-          CreateAchievment("General", "Me chame de Dr Slime", "Consiga 3 estrelas: 26-30", 11);
-          CreateAchievment("General", "De repente 31", "Consegiu 3 estrelas na fase 31", 0);
+          CreateAchievment("General", "Primeiros passos fofos", "Liberou a fase 5", 10);
+          CreateAchievment("General", "Pegando o jeito", "Liberou a fase 10", 14);
+          CreateAchievment("General", "Talvez isso seja viciante", "Liberou a fase 15", 13);
+          CreateAchievment("General", "Não é uma fase mãe!", "Liberou a fase 20", 15);
+          CreateAchievment("General", "Graduado em apertar slimes", "Liberou a fase 25", 12);
+          CreateAchievment("General", "Me chame de Dr Slime", "Liberou a fase 30", 11);
+          CreateAchievment("General", "De repente 31", "Liberou a fase 31", 0);
            
-          CreateAchievment("General", "Estrelato", "3 estrelas em todas as fases", 16, new string[] 
+          CreateAchievment("General", "Estrelato", "Liberou todas as fases", 16, new string[] 
           {"Primeiros passos fofos", "Pegando o jeito", "Talvez isso seja viciante", "Não é uma fase mãe!",
           "Graduado em apertar slimes", "Me chame de Dr Slime", "De repente 31"});
 
@@ -64,32 +64,36 @@ public class AchievmentManager : MonoBehaviour
      void Update(){
 
           //reais
-          if(LevelUnlock.unlockedLevelsNumber == 6){
+          if(LevelUnlock.unlockedLevelsNumber == 5){
                 EarnAchievment("Primeiros passos fofos");
           }
 
-          if(LevelUnlock.unlockedLevelsNumber == 11){
+          if(LevelUnlock.unlockedLevelsNumber == 10){
                 EarnAchievment("Pegando o jeito");
           }
 
-          if(LevelUnlock.unlockedLevelsNumber == 16){
+          if(LevelUnlock.unlockedLevelsNumber == 15){
                 EarnAchievment("Talvez isso seja viciante");
           }
 
-          if(LevelUnlock.unlockedLevelsNumber == 21){
+          if(LevelUnlock.unlockedLevelsNumber == 20){
                 EarnAchievment("Não é uma fase mãe!");
           }
 
-          if(LevelUnlock.unlockedLevelsNumber == 26){
+          if(LevelUnlock.unlockedLevelsNumber == 25){
                 EarnAchievment("Graduado em apertar slimes");
           }
 
-          if(LevelUnlock.unlockedLevelsNumber == 31){
+          if(LevelUnlock.unlockedLevelsNumber == 30){
                 EarnAchievment("Me chame de Dr Slime");
           }
 
-           if(LevelUnlock.unlockedLevelsNumber == 32){
+          if(LevelUnlock.unlockedLevelsNumber == 31){
                 EarnAchievment("De repente 31");
+          }
+
+          if(LevelUnlock.unlockedLevelsNumber == 31){
+                EarnAchievment("Estrelato");
           }
           
          
