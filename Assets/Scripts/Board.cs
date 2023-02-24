@@ -143,8 +143,7 @@ public class Board : MonoBehaviour
                 //teste de pegar a tag
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("blue")){
-                AchievementManager.instance.AddAchievementProgress("Slime de Turquesa", 1);
-    
+                AchievementManager.instance.AddAchievementProgress("Slime de Turquesa", 1);   
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("red")){

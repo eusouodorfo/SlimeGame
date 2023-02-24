@@ -1055,17 +1055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4925a755fa41030439a71a434e78fb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &250465690 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5869893064832991962, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
-  m_PrefabInstance: {fileID: 1048598445}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4649ecec4d59d264faf94e9ac18561b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &296717401 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2462368119536491494, guid: b8be809958f5ebb47b2901d26f6bc942, type: 3}
@@ -3296,6 +3285,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+--- !u!114 &1048598446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5869893064832991962, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+  m_PrefabInstance: {fileID: 1048598445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4649ecec4d59d264faf94e9ac18561b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1068756469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5175,7 +5175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: Main_Menu
-  trophylevel: trophy test
   LevelSelect: LevelSelect
 --- !u!114 &1402376026
 MonoBehaviour:
@@ -9225,7 +9224,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 250465690}
+      - m_Target: {fileID: 1048598446}
         m_TargetAssemblyTypeName: AchievenmentListIngame, Assembly-CSharp
         m_MethodName: ToggleWindow
         m_Mode: 1

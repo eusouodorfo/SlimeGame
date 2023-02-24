@@ -49,7 +49,7 @@ public class AchievementManager : MonoBehaviour
        }
        else if (instance != this)
        {
-            Destroy(gameObject);
+            //Destroy(gameObject);
        }
         DontDestroyOnLoad(gameObject);
         AudioSource = gameObject.GetComponent<AudioSource>();
