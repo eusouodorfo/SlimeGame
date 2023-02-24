@@ -68,6 +68,7 @@ public class UIAchievement : MonoBehaviour
             {
                 ProgressBar.fillAmount = State.Achieved ? 1 : 0;
                 Percent.text = State.Achieved ? "(Achieved)" : "(Locked)";
+                //Achieved -> Desbloqueado, Locked -> Bloqueado
             }
         }
     }

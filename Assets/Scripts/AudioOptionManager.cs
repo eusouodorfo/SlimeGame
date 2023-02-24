@@ -14,8 +14,7 @@ public class AudioOptionManager : MonoBehaviour
    public void OnMusicSliderValueChange(float value){
         musicVolume = value;
         musicSliderText.text = value.ToString();
-        AudioManager.Instance.UpdateMixerVolume();
-        
+        AudioManager.Instance.UpdateMixerVolume();     
    }
 
    public void OnSoundEffectsSliderValueChange(float value){

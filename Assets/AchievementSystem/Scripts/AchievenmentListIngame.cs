@@ -36,6 +36,7 @@ public class AchievenmentListIngame : MonoBehaviour
 
         for (int i = 0; i < AM.AchievementList.Count; i ++)
         {
+            //todos era All, Desbloqueado era Achieved e Unachieved ficou bloqueados, Complete -> Completo
             if((Filter.Equals("All")) || (Filter.Equals("Achieved") && AM.States[i].Achieved) || (Filter.Equals("Unachieved") && !AM.States[i].Achieved))
             {
                 AddAchievementToUI(AM.AchievementList[i], AM.States[i]);
