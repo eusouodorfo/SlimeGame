@@ -31,6 +31,11 @@ public class AchievmentManager : MonoBehaviour
           }
      }
 
+     //tentativa por adicao de progress
+     public int achTagBlue;
+     private int achTagBluePre, achTagRedPre;
+
+
      void Start(){
 
           CreateAchievment("General", "Primeiros passos fofos", "Liberou a fase 5", 10, 0);
@@ -63,6 +68,9 @@ public class AchievmentManager : MonoBehaviour
 
      void Update(){
 
+          achTagBluePre = achTagBluePre + Board.tagBlue;
+
+          
           //conquistas sobre alcancar fases
           if(LevelUnlock.unlockedLevelsNumber == 5){
                 EarnAchievment("Primeiros passos fofos");
@@ -106,9 +114,9 @@ public class AchievmentManager : MonoBehaviour
           }
 
           //conquistas sobre slimes destruidos
-          if(Board.tagBlue >= 100){
-               EarnAchievment("Slime de Turquesa");
-          }
+         // if(GameObject.){
+           //    EarnAchievment("Slime de Turquesa");
+         // }
           if(Board.tagRed >= 100){
                EarnAchievment("Slime de Rubi");
           }
@@ -124,6 +132,9 @@ public class AchievmentManager : MonoBehaviour
           if(Board.tagGreen >= 100){
                EarnAchievment("Slime de Esmeralda");
           }
+
+          //teste com metodo
+          
           
          
      }
@@ -139,11 +150,6 @@ public class AchievmentManager : MonoBehaviour
                StartCoroutine(FadeAchievment(achievment));
           }
      }
-
-     /*public IEnumerator HideAchievment(GameObject achievment){
-          yield return new WaitForSeconds(3);
-          Destroy(achievment);
-     }*/
 
      public void CreateAchievment(string parent, string title, string description, int spriteIndex, int progress, string[] dependencies = null){
         

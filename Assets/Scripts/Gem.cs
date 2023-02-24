@@ -24,7 +24,7 @@ public class Gem : MonoBehaviour
 
     //teste pra capturar a tag
     public enum GemTag {blue, green, red, yellow, purple, bomb, stone, white}
-    public GemTag componentTag;
+    
 
     public bool isMatched;
     

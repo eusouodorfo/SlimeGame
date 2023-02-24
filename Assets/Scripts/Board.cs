@@ -14,8 +14,7 @@ public class Board : MonoBehaviour
     public Gem[,] allGems;
 
     //teste para capturar tag
-    public Gem[,] allGemsTags;
-    public static bool achtagBlue = false;
+    public static Gem[,] allGemsTags;
 
     public float gemSpeed;
 
@@ -27,8 +26,7 @@ public class Board : MonoBehaviour
 
     //teste add de tag
     public static int tagBlue, tagRed, tagYellow, tagWhite, tagPurple, tagGreen;
-    public static int tagBluePre, tagRedPre, tagYellowPre, tagWhitePre, tagPurplePre, tagGreenPre;
-
+    public static int lastBlue;
 
 
     public Gem bomb;
@@ -63,6 +61,11 @@ public class Board : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S)){
             ShuffleBoard();
         }
+
+    //teste com update
+       
+
+
     }
 
 
@@ -140,35 +143,30 @@ public class Board : MonoBehaviour
                 //teste de pegar a tag
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("blue")){
-                    tagBlue++;   
+                AchievementManager.instance.AddAchievementProgress("Slime de Turquesa", 1);
+    
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("red")){
-                    tagRed++;
+                    AchievementManager.instance.AddAchievementProgress("Slime de Rubi", 1);
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("white")){
-                    tagWhite++;
+                    AchievementManager.instance.AddAchievementProgress("Slime de Pérola", 1);
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("green")){
-                    tagGreen++;
+                    AchievementManager.instance.AddAchievementProgress("Slime de Esmeralda", 1);
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("purple")){
-                    tagPurple++;
+                   AchievementManager.instance.AddAchievementProgress("Slime de Ametista", 1);
                 }
                 Debug.Log(allGems[pos.x, pos.y].tag);
                 if(allGems[pos.x, pos.y].CompareTag("yellow")){
-                    tagYellow++;
+                    AchievementManager.instance.AddAchievementProgress("Slime de Topázio", 1);
                 }
                 
-                Debug.Log("Foram destruidos slimes azuis: " + tagBlue);
-                Debug.Log("Foram destruidos slimes vermelho: " + tagRed);
-                Debug.Log("Foram destruidos slimes amarelo: " + tagYellow);
-                Debug.Log("Foram destruidos slimes roxo: " + tagPurple);
-                Debug.Log("Foram destruidos slimes verde: " + tagGreen);
-                Debug.Log("Foram destruidos slimes white: " + tagWhite);
 
                 //codigo normal
 
@@ -178,7 +176,7 @@ public class Board : MonoBehaviour
                 Destroy(allGems[pos.x, pos.y].gameObject);
                 allGems[pos.x, pos.y] = null;
 
-                tagBlue = 0;
+               
             }
         }
 
@@ -309,5 +307,6 @@ public class Board : MonoBehaviour
         }
     }
 
+    
     
 }

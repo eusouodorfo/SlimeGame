@@ -30,8 +30,7 @@ public class SFXManager : MonoBehaviour
 
         explodeSound.pitch = Random.Range(.8f, 1.2f);
 
-        bombCount++;
-        Debug.Log("Bombas explodidas " + bombCount);
+        AchievementManager.instance.AddAchievementProgress("Bomber Man", 1);
         
         explodeSound.Play();
     }
@@ -41,8 +40,7 @@ public class SFXManager : MonoBehaviour
 
         stoneSound.pitch = Random.Range(.8f, 1.2f);
 
-        stoneCount++;
-        Debug.Log("Pedras explodidas " + stoneCount);
+        AchievementManager.instance.AddAchievementProgress("Slime mole em pedra dura...", 1);
         
         stoneSound.Play();
     }
