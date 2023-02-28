@@ -78,7 +78,13 @@ public class RoundManager : MonoBehaviour
         }
 
         if(currentScore >= scoreTarget1){
-            PlayerPrefs.SetInt("levelsUnlocked", levelToUnlock);
+            //teste arrumar player prefabs, só retirar todo o if se der ruim
+
+            if(PlayerPrefs.GetInt("levelsUnlocked") <= levelToUnlock){
+                PlayerPrefs.SetInt("levelsUnlocked", levelToUnlock);
+            }
+
+            
         }
         
         SFXManager.instance.PlayRoundOver();
