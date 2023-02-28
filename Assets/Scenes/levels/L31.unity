@@ -590,15 +590,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43811df8f6c820746821d292bd2f5c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 600
+  roundTime: 180
   currentScore: 0
   displayScore: 0
   scoreSpeed: 5
   nextLevel: L31
   levelToUnlock: 32
-  scoreTarget1: 100
-  scoreTarget2: 500
-  scoreTarget3: 1000
+  scoreTarget1: 2000
+  scoreTarget2: 3000
+  scoreTarget3: 5000
 --- !u!4 &1406674068
 Transform:
   m_ObjectHideFlags: 0
