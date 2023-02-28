@@ -312,7 +312,7 @@ MonoBehaviour:
   bomb: {fileID: 5169605546971356340, guid: d50e18b217743904bb49e4043460a118, type: 3}
   bombChance: 2
   roundMan: {fileID: 0}
-  bonusAmount: 2
+  bonusAmount: 0.5
 --- !u!4 &271334593
 Transform:
   m_ObjectHideFlags: 0
@@ -534,9 +534,9 @@ MonoBehaviour:
   scoreSpeed: 5
   nextLevel: L6
   levelToUnlock: 6
-  scoreTarget1: 1000
-  scoreTarget2: 1500
-  scoreTarget3: 2000
+  scoreTarget1: 750
+  scoreTarget2: 1000
+  scoreTarget3: 1500
 --- !u!4 &1406674068
 Transform:
   m_ObjectHideFlags: 0

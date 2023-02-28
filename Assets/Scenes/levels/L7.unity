@@ -250,7 +250,7 @@ MonoBehaviour:
   matchFind: {fileID: 0}
   currentState: 1
   bomb: {fileID: 5169605546971356340, guid: d50e18b217743904bb49e4043460a118, type: 3}
-  bombChance: 8
+  bombChance: 2
   roundMan: {fileID: 0}
   bonusAmount: 0.5
 --- !u!4 &271334593
@@ -643,9 +643,9 @@ MonoBehaviour:
   scoreSpeed: 5
   nextLevel: L8
   levelToUnlock: 8
-  scoreTarget1: 1250
-  scoreTarget2: 1750
-  scoreTarget3: 2250
+  scoreTarget1: 750
+  scoreTarget2: 1000
+  scoreTarget3: 1500
 --- !u!4 &1406674068
 Transform:
   m_ObjectHideFlags: 0

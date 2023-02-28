@@ -643,9 +643,9 @@ MonoBehaviour:
   scoreSpeed: 5
   nextLevel: L11
   levelToUnlock: 11
-  scoreTarget1: 1250
-  scoreTarget2: 1750
-  scoreTarget3: 2250
+  scoreTarget1: 750
+  scoreTarget2: 1000
+  scoreTarget3: 1500
 --- !u!4 &1406674068
 Transform:
   m_ObjectHideFlags: 0
