@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Add list of achievements to screen
@@ -10,8 +11,8 @@ public class AchievenmentListIngame : MonoBehaviour
     [HideInInspector] public GameObject prefab;
     [HideInInspector] public GameObject Menu;
     [HideInInspector] public Dropdown Filter;
-    [HideInInspector] public Text CountText;
-    [HideInInspector] public Text CompleteText;
+    public TextMeshProUGUI CountText;
+    public TextMeshProUGUI CompleteText;
     [HideInInspector] public Scrollbar Scrollbar;
 
     private bool MenuOpen = false;
