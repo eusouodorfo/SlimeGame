@@ -33,7 +33,7 @@ public class AchievenmentListIngame : MonoBehaviour
         int AchievedCount = AM.GetAchievedCount();
 
         CountText.text = "" + AchievedCount + " / " + AM.States.Count;
-        CompleteText.text = "Complete (" + AM.GetAchievedPercentage() + "%)";
+        CompleteText.text = "Completo (" + AM.GetAchievedPercentage() + "%)";
 
         for (int i = 0; i < AM.AchievementList.Count; i ++)
         {
