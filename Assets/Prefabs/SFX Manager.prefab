@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1447847756455041688}
   m_Layer: 0
   m_Name: level complete
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1447847756521419649}
   m_Layer: 0
   m_Name: explosion
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1447847756531386202}
   - component: {fileID: 1447847756531386203}
-  - component: {fileID: 1893053269780860123}
   m_Layer: 0
   m_Name: SFX Manager
   m_TagString: Untagged
@@ -310,53 +309,6 @@ MonoBehaviour:
   explodeSound: {fileID: 1447847756521419649}
   stoneSound: {fileID: 1447847757817182393}
   roundOverSound: {fileID: 1447847756455041688}
---- !u!114 &1893053269780860123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447847756531386204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bac11ef55e43a449183c1847e32376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicMixerGroup: {fileID: 4090104832218794781, guid: bad70b8e47adf5145b80d6019c5d9613, type: 2}
-  soundEffectsMixerGroup: {fileID: 7714838228943128091, guid: bad70b8e47adf5145b80d6019c5d9613, type: 2}
-  sounds:
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 468fd0cd7024ff24eb2f302063f4b42f, type: 3}
-    prefabAudio: {fileID: 0}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 9dcc9b1297952c446a5571fdb2fb7a2f, type: 3}
-    prefabAudio: {fileID: 0}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 12f0733135e9e604d8a960b0655e03d0, type: 3}
-    prefabAudio: {fileID: 0}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 4c7d330755b8c1c478fa5bae659f3632, type: 3}
-    prefabAudio: {fileID: 0}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
 --- !u!1 &1447847757817182394
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +321,7 @@ GameObject:
   - component: {fileID: 1447847757817182393}
   m_Layer: 0
   m_Name: stone break
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,7 +449,7 @@ GameObject:
   - component: {fileID: 1447847758185216909}
   m_Layer: 0
   m_Name: slime explosion 1
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,7 +577,7 @@ GameObject:
   - component: {fileID: 1447847758202100498}
   m_Layer: 0
   m_Name: gem break
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
