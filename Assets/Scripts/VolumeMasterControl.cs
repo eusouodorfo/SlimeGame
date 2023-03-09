@@ -5,26 +5,29 @@ using UnityEngine.UI;
 
 public class VolumeMasterControl: MonoBehaviour
 {
-    float volumeMaster, volumeFX, volumeMusica;
-    public Slider sliderMaster, sliderFX, sliderMusica;
+    //volumeMaster , sliderMaster
+    float volumeFX, volumeMusica;
+    public Slider  sliderFX, sliderMusica;
 
     void Start(){
 
-        sliderMaster.value = PlayerPrefs.GetFloat("Master");
+        //sliderMaster.value = PlayerPrefs.GetFloat("Master");
         sliderFX.value = PlayerPrefs.GetFloat("FX");
         sliderMusica.value = PlayerPrefs.GetFloat("Musica");
     }
 
     void Update(){
-
+       
     }
 
+    /*
     public void VolumeMaster(float volume){
         volumeMaster = volume;
         AudioListener.volume = volumeMaster;
 
         PlayerPrefs.SetFloat("Master", volumeMaster);
     }
+    */
 
     public void VolumeFX(float volume){
         volumeFX = volume;
@@ -38,10 +41,14 @@ public class VolumeMasterControl: MonoBehaviour
 
     public void VolumeMusica(float volume){
         volumeMusica = volume;
+
         GameObject[] Musicas = GameObject.FindGameObjectsWithTag("Musica");
         for(int i = 0; i < Musicas.Length; i++){
             Musicas[i].GetComponent<AudioSource>().volume = volumeMusica;
         }
         PlayerPrefs.SetFloat("Musica", volumeMusica);
+
+        
+        
     }
 }
