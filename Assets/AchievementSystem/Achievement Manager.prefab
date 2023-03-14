@@ -1904,9 +1904,6 @@ MonoBehaviour:
   States:
   - Progress: 0
     LastProgressUpdate: 0
-    Achieved: 1
-  - Progress: 0
-    LastProgressUpdate: 0
     Achieved: 0
   - Progress: 0
     LastProgressUpdate: 0
@@ -1926,28 +1923,31 @@ MonoBehaviour:
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0
-  - Progress: 100
-    LastProgressUpdate: 3
-    Achieved: 1
-  - Progress: 78
-    LastProgressUpdate: 3
-    Achieved: 0
-  - Progress: 100
-    LastProgressUpdate: 3
-    Achieved: 1
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0
-  - Progress: 100
-    LastProgressUpdate: 3
-    Achieved: 1
-  - Progress: 100
-    LastProgressUpdate: 3
-    Achieved: 1
+  - Progress: 12
+    LastProgressUpdate: 0
+    Achieved: 0
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0
-  - Progress: 8
+  - Progress: 11
+    LastProgressUpdate: 0
+    Achieved: 0
+  - Progress: 0
+    LastProgressUpdate: 0
+    Achieved: 0
+  - Progress: 5
+    LastProgressUpdate: 0
+    Achieved: 0
+  - Progress: 9
+    LastProgressUpdate: 0
+    Achieved: 0
+  - Progress: 0
+    LastProgressUpdate: 0
+    Achieved: 0
+  - Progress: 1
     LastProgressUpdate: 0
     Achieved: 0
   - Progress: 0
@@ -2124,7 +2124,7 @@ MonoBehaviour:
     Description: Usou 100 bombas
     LockedIcon: {fileID: 21300000, guid: f790bd5b98e87e34fb534cc9167e4280, type: 3}
     LockOverlay: 0
-    AchievedIcon: {fileID: 0}
+    AchievedIcon: {fileID: 21300000, guid: f77b0a0a98b4d88479826d383ebfa0a6, type: 3}
     Spoiler: 0
     Progression: 1
     ProgressGoal: 100
@@ -2135,7 +2135,7 @@ MonoBehaviour:
     Description: Fez todas as conquistas do jogo
     LockedIcon: {fileID: 21300000, guid: f790bd5b98e87e34fb534cc9167e4280, type: 3}
     LockOverlay: 0
-    AchievedIcon: {fileID: 0}
+    AchievedIcon: {fileID: 21300000, guid: 1385483611867a84799dc550757f0b5e, type: 3}
     Spoiler: 0
     Progression: 0
     ProgressGoal: 0
