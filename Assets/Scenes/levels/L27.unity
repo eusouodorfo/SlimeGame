@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: f6cc67ab8870dda4dbc253117214730e, type: 3}
+    - target: {fileID: 4738703011584271633, guid: 07e727183f45baa43af5c8d736dcbac0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4738703011584271634, guid: 07e727183f45baa43af5c8d736dcbac0, type: 3}
       propertyPath: m_Camera
       value: 
