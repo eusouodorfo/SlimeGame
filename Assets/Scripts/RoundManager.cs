@@ -74,6 +74,7 @@ public class RoundManager : MonoBehaviour
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Star1", 1);
             
         }else{
+            uiMan.defeatStar.SetActive(true);
             uiMan.winText.text = "Oh não! Nenhuma estrela! Tente novamente!";
         }
 

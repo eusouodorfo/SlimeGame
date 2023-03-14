@@ -336,7 +336,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43811df8f6c820746821d292bd2f5c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 180
+  roundTime: 10
   currentScore: 0
   displayScore: 0
   scoreSpeed: 5
@@ -1160,6 +1160,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Level 31
       objectReference: {fileID: 0}
+    - target: {fileID: 1781491378, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.657959
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781491378, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.44555664
+      objectReference: {fileID: 0}
     - target: {fileID: 1351044677398105195, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1495,6 +1503,14 @@ PrefabInstance:
     - target: {fileID: 4289080543966517771, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289080544668356947, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.657959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289080544668356947, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.44555664
       objectReference: {fileID: 0}
     - target: {fileID: 6057601704833277672, guid: dc86ee200aa607c4a91879376ce066f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
