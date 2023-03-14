@@ -171,6 +171,8 @@ public class Board : MonoBehaviour
 
                 Instantiate(allGems[pos.x, pos.y].destroyEffect, new Vector2(pos.x, pos.y), Quaternion.identity);
 
+                //teste add tempo com round manager
+                roundMan.roundTime += 0.5f;
 
                 Destroy(allGems[pos.x, pos.y].gameObject);
                 allGems[pos.x, pos.y] = null;
